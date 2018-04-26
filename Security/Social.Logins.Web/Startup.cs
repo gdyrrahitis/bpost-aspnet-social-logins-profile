@@ -3,6 +3,8 @@
     using Microsoft.AspNetCore.Authentication.Cookies;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Rewrite;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Social.Logins.Web.Constants;
@@ -60,6 +62,8 @@
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            var options = new RewriteOptions().AddRedirectToHttps(StatusCodes.Status301MovedPermanently, 44319);
+            app.UseRewriter(options);
             app.UseStaticFiles();
             app.UseAuthentication();
 
