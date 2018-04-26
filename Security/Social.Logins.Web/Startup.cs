@@ -30,18 +30,18 @@
             })
             .AddFacebook(options =>
             {
-                options.AppId = "163258761152890";
-                options.AppSecret = "50b5d2346000da7f4b86c3b7542f8ef6";
+                options.AppId = "";
+                options.AppSecret = "";
             })
             .AddTwitter(options =>
             {
-                options.ConsumerKey = "3UmDhvlKAZCRGNRidl3XSTiw4";
-                options.ConsumerSecret = "kXbPJ3krIdpMNYB31HpFKrhpkzOQ4MvUt3jCKTS7hjviVzNpiB";
+                options.ConsumerKey = "";
+                options.ConsumerSecret = "";
             })
             .AddGitHub(options =>
             {
-                options.ClientId = "96034b15ad9b9e0d1d6d";
-                options.ClientSecret = "0d7fe6b6ca83272a04aace557689beac33a995b0";
+                options.ClientId = "";
+                options.ClientSecret = "";
             })
             .AddCookie(options => options.LoginPath = "/auth/signin")
             .AddCookie(TemporaryAuthenticationDefaults.AuthenticationScheme);
