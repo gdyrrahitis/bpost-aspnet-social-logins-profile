@@ -2,6 +2,7 @@
 {
     using System.Diagnostics;
     using System.Linq;
+    using Microsoft.AspNetCore.Authentication.Cookies;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Social.Logins.Web.Models;
@@ -10,8 +11,9 @@
     {
         public IActionResult Index() => View();
 
-        [Authorize]
-        public IActionResult Details() => View(new DetailsViewModel {
+        [Authorize(AuthenticationSchemes = CookieAuthenticationDefaults.AuthenticationScheme)]
+        public IActionResult Details() => View(new DetailsViewModel
+        {
             Name = User.Identity.Name,
             Claims = User.Claims.ToList()
         });
